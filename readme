@@ -7,6 +7,8 @@ brew install mongodb
 '''bash
 brew services start mongodb-community 
 '''
+##kill process
+kill -9 port_number
 ##start project on port 3000
 '''bash
 npm start
