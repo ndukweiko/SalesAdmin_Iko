@@ -1,0 +1,43 @@
+extends layout
+block content
+  br
+  h2 Import CSV and Calculate Total
+  br
+  form(id ='uploaddata' enctype='multipart/form-data' action ="/uploadcsv" method="post")
+    div.form-group
+      input(type='file', name='uploads' id = 'filedialog') 
+      input(type="submit",  value="Upload csv" name ="submit" id='submitbtn')
+  p
+
+
+   |
+   a(href='javascript:void(0)' class='btn btn-primary' id='importdata') Import CSV 
+   |
+   a(href='javascript:void(0)' class='btn btn-primary' id='getdata') Get Database Contents
+  br  
+  p#message.alert.alert-success(style='display:none')
+  br
+
+
+  table.table.table-bordered
+    thead
+      tr
+        th Current Total
+    tbody#totaldata
+      tr
+  table.table.table-bordered
+    thead
+        tr
+            th CustomerName
+            th ItemDescription
+            th ItemPrice
+            th Quantity
+            th MerchantName
+            th MerchantAddress
+
+      
+    tbody#trdata
+        tr
+            td(colspan='3') Click on <strong>Import CSV</strong> button to import and save data to MongoDB. <br />Click on <strong>Calc Data</strong>  to sum prices in the Database
+
+    
